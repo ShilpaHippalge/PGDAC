@@ -1,0 +1,38 @@
+<div class="container-fluids">
+    <div class="row">
+        <div class="col-3" style="background-color:#1c87c9;">
+            <div class="nav flex-column nav-tabs" id="v-tabs-tab"
+            role="tablist" aria-orientation="vertical">
+             <h3>Hello,</h3>
+             <h5>{{faculty.firstName}}</h5>
+            </div>
+        </div>
+        <div class="col-9">
+            <div class="tab-content" id="v-pills-tabContent">
+                <div class="row">
+                <div class="tab-pane fade show active"
+                id="v-tabs-subject" role="tabpanel" *ngFor="let a of facultyMapping">  
+
+           
+    
+                   
+                    <div class="card" style="width: 18rem;" [class.assigned]="a.status">
+                        <div class="card-body">
+                          <h5 class="card-title">{{a.subject.subjectName}}</h5>
+                          <hr>
+                          <h6 class="card-subtitle mb-2 text-muted">{{a.subject.description}}</h6>
+                          <p class="card-text"></p>
+                          <div *ngIf="!a.status">
+                            <a href="#" class="card-link"  routerLink="/addAssignment/{{a.faculty.fid}}/{{a.mid}}">ADD ASSIGNMENT</a>
+                          </div>
+                          <div *ngIf="a.status">
+                            <a href="#" class="card-link"  routerLink="/addAssignment/{{a.faculty.fid}}/{{a.mid}}">SEE SUBMISSION</a>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+     </div>
+</div>

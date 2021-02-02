@@ -1,0 +1,8 @@
+.content {
+    min-height: 100%;
+  }
+  .content-inside {
+    padding: 20px;
+    padding-bottom: 50px;
+    min-height: 505px;
+  }
